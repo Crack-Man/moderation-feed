@@ -1,0 +1,65 @@
+.dialog-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.dialog {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000;
+    width: 600px;
+
+    &__subject {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+}
+
+.form {
+    &__group {
+        display: flex;
+        gap: 20px;
+        justify-content: end;
+    }
+
+    &__textarea {
+        width: calc(100% - 20px);
+        height: 100px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+    }
+
+    &__submit {
+        padding: 10px 20px;
+        background-color: rgba(23, 100, 204, 1);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    &__close {
+        padding: 10px 20px;
+        background-color: rgba(113, 137, 169, 1);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}

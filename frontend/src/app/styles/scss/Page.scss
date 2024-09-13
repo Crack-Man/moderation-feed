@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(74, 74, 74, 1);
+}
+
+
+a, a:active, a:visited {
+    text-decoration: none;
+    color: rgba(23, 100, 204, 1);
+}
+
+.container {
+    width: 1380px;
+    margin: 0 auto;
+    padding: 20px;
+
+    &_flexible {
+        display: flex;
+        justify-content: space-between;
+    }
+}
