@@ -8,6 +8,17 @@ export default function DialogComponent({dialogData, onClose, onSubmit}) {
         return null;
     }
 
+    function closeDialog() {
+        setText("");
+        onClose()
+    }
+
+    function submit(e) {
+        e.preventDefault();
+        onSubmit(text, dialogData.type);
+        setText("")
+    }
+
     return (
         <>
             <div className="dialog-background"></div>
@@ -17,11 +28,7 @@ export default function DialogComponent({dialogData, onClose, onSubmit}) {
                 </div>
                 <form
                     className="form"
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        onSubmit(text, dialogData.type);
-                        setText("")
-                    }}
+                    onSubmit={submit}
                 >
                 <textarea
                     className="form__textarea"
@@ -30,7 +37,7 @@ export default function DialogComponent({dialogData, onClose, onSubmit}) {
                 />
                     <div className="form__group">
                         <button type="submit" className="form__submit">Отправить</button>
-                        <button type="button" onClick={onClose} className="form__close">Закрыть</button>
+                        <button type="button" onClick={closeDialog} className="form__close">Закрыть</button>
                     </div>
                 </form>
             </div>

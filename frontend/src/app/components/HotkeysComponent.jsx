@@ -29,16 +29,19 @@ export default function HotkeysComponent() {
     ];
 
     return (
-        <div className="hotkeys">
-            {hotkeyList.map(item => {
-                return (
-                    <div className="hotkeys__item" key={item.id}>
-                        <div className="hotkeys__name">{item.name}</div>
-                        <div className="hotkeys__circle" style={{backgroundColor: item.color}}></div>
-                        <div className="hotkeys__key">{item.key}</div>
-                    </div>
-                );
-            })}
+        <div className="panel">
+            <div className="hotkeys">
+                {hotkeyList.map(item => {
+                    return (
+                        <div className="hotkeys__item" key={item.id}>
+                            <div className="hotkeys__name">{item.name}</div>
+                            <div className="hotkeys__circle" style={{backgroundColor: item.color}}></div>
+                            <div className="hotkeys__key">{item.key}</div>
+                        </div>
+                    );
+                })}
+            </div>
+
         </div>
     );
 }

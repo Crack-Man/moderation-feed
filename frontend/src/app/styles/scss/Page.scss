@@ -7,6 +7,12 @@ body {
     color: rgba(74, 74, 74, 1);
 }
 
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 
 a, a:active, a:visited {
     text-decoration: none;

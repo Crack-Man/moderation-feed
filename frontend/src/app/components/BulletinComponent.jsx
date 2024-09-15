@@ -67,7 +67,7 @@ function BulletinBodyComponent({data}) {
 export default function BulletinComponent({data, onClick}) {
 
     return (
-        <div onClick={onClick} className="bulletin">
+        <div onClick={onClick} className="bulletin" id={`bulletin-${data.id}`}>
             <BulletinHeaderComponent data={data} />
             <BulletinBodyComponent data={data} />
         </div>

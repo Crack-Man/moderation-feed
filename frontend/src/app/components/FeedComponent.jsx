@@ -23,6 +23,8 @@ export default function FeedComponent() {
             position = focusedBulletin.current.position + 1;
         }
         setFocusedBulletin(bulletins.current[position], position);
+        const bulletinElement = document.getElementById(`bulletin-${focusedBulletin.current.id}`);
+        bulletinElement.scrollIntoView({ behavior: 'smooth' });
     }
 
     function decide(decision, declineReason = null, escalateNote = null) {
