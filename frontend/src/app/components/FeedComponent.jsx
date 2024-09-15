@@ -23,8 +23,12 @@ export default function FeedComponent() {
             position = focusedBulletin.current.position + 1;
         }
         setFocusedBulletin(bulletins.current[position], position);
+        scrollToBulletin();
+    }
+
+    function scrollToBulletin() {
         const bulletinElement = document.getElementById(`bulletin-${focusedBulletin.current.id}`);
-        bulletinElement.scrollIntoView({ behavior: 'smooth' });
+        bulletinElement.scrollIntoView({behavior: 'smooth'});
     }
 
     function decide(decision, declineReason = null, escalateNote = null) {
@@ -52,7 +56,7 @@ export default function FeedComponent() {
     }
 
     function closeDialog() {
-        setDialogData({ ...dialogData, visible: false });
+        setDialogData({...dialogData, visible: false});
     }
 
     useEffect(() => {
@@ -97,6 +101,12 @@ export default function FeedComponent() {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
+
+    useEffect(() => {
+        if (bulletinsState.length) {
+            scrollToBulletin();
+        }
+    }, [bulletinsState]);
 
     return (
         <div className="feed">
